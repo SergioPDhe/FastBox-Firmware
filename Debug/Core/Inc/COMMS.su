@@ -1,0 +1,4 @@
+COMMS.c:10:6:ReceiveCommand	16	static
+COMMS.c:37:6:SendPollResponse	8	static
+COMMS.c:50:6:SendOrigin	8	static
+COMMS.c:77:6:SendInputs	8	static

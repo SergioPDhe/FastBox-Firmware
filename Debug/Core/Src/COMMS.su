@@ -1,0 +1,16 @@
+COMMS.c:10:6:ReceiveCommand	16	static
+COMMS.c:37:6:SendPollResponse	8	static
+COMMS.c:50:6:SendOrigin	8	static
+COMMS.c:77:6:SendInputs	8	static
+COMMS.c:103:6:SendByte	16	static
+COMMS.c:115:9:ReceiveByte	16	static
+COMMS.c:134:9:ReceiveRumbleByte	8	static
+COMMS.c:146:6:SendPair	16	static
+COMMS.c:156:9:ReceivePair	4	static
+COMMS.c:164:9:Byte2GC	16	static
+COMMS.c:177:9:GC2Byte	16	static
+COMMS.c:193:6:SendStopBit	8	static
+COMMS.c:198:6:FlushReceiveBuffer	16	static
+COMMS.c:207:6:SetBaudSend	8	static
+COMMS.c:213:6:SetBaudReceive	8	static
+COMMS.c:220:6:SetRumble	16	static
