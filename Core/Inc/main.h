@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -91,15 +91,15 @@ void Error_Handler(void);
 #define C_UP_GPIO_Port GPIOB
 #define C_DOWN_Pin GPIO_PIN_15
 #define C_DOWN_GPIO_Port GPIOB
+#define MS_Pin GPIO_PIN_8
+#define MS_GPIO_Port GPIOA
+#define LS_Pin GPIO_PIN_9
+#define LS_GPIO_Port GPIOA
 #define TX_INT_Pin GPIO_PIN_3
 #define TX_INT_GPIO_Port GPIOB
 #define TX_INT_EXTI_IRQn EXTI3_IRQn
 #define RUMBLE_Pin GPIO_PIN_4
 #define RUMBLE_GPIO_Port GPIOB
-#define LS_Pin GPIO_PIN_5
-#define LS_GPIO_Port GPIOB
-#define MS_Pin GPIO_PIN_6
-#define MS_GPIO_Port GPIOB
 #define MX_Pin GPIO_PIN_8
 #define MX_GPIO_Port GPIOB
 #define MY_Pin GPIO_PIN_9

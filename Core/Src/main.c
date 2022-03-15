@@ -22,7 +22,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+//#include "COMMS.h"
+//#include "GC_DAC.h"
 //#include "COMMS.h"
 /* USER CODE END Includes */
 
@@ -58,8 +59,8 @@ static void MX_USART1_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-volatile uint8_t  StYXBA =    0x00;
-volatile uint8_t  LRZDpad =   0x80;
+//volatile uint8_t  StYXBA =    0x00;
+//volatile uint8_t  LRZDpad =   0x80;
 volatile uint8_t  ControlX =  128;
 volatile uint8_t  ControlY =  128;
 volatile uint8_t  CstickX =   128;
@@ -68,7 +69,13 @@ volatile uint8_t  AnalogL =   0;
 volatile uint8_t  AnalogR =   0;
 volatile uint8_t  DPad =      0;
 
-volatile uint8_t  rumble =    0;
+int count = 0;
+int avg_count = 0;
+int count_num = 0;
+
+bool dPad_on = false;
+
+//volatile uint8_t  rumble =    0;
 
 /* USER CODE END 0 */
 
@@ -99,9 +106,9 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
   MX_USB_DEVICE_Init();
   MX_USART1_UART_Init();
+  MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -110,6 +117,11 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	while (1)
 	{
+		count++;
+		Digital_Analog_Conversion();
+
+		//printf("loopin");
+		//UpdateAnalog();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -224,19 +236,21 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : A_Pin B_Pin X_Pin Y_Pin
-                           START_Pin Z_Pin R_Pin L_Pin */
+                           START_Pin Z_Pin R_Pin L_Pin
+                           MS_Pin LS_Pin */
   GPIO_InitStruct.Pin = A_Pin|B_Pin|X_Pin|Y_Pin
-                          |START_Pin|Z_Pin|R_Pin|L_Pin;
+                          |START_Pin|Z_Pin|R_Pin|L_Pin
+                          |MS_Pin|LS_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : RIGHT_Pin LEFT_Pin UP_Pin DOWN_Pin
                            C_RIGHT_Pin C_LEFT_Pin C_UP_Pin C_DOWN_Pin
-                           LS_Pin MS_Pin MX_Pin MY_Pin */
+                           MX_Pin MY_Pin */
   GPIO_InitStruct.Pin = RIGHT_Pin|LEFT_Pin|UP_Pin|DOWN_Pin
                           |C_RIGHT_Pin|C_LEFT_Pin|C_UP_Pin|C_DOWN_Pin
-                          |LS_Pin|MS_Pin|MX_Pin|MY_Pin;
+                          |MX_Pin|MY_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
@@ -264,7 +278,14 @@ static void MX_GPIO_Init(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+	count_num++;
 	ReceiveCommand();
+
+	//count_num=count;
+	avg_count = count;
+	count = 0;
+
+	__HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin);
 }
 
 /* USER CODE END 4 */

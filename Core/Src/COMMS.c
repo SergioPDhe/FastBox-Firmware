@@ -219,7 +219,8 @@ void SetBaudReceive() // changes UART frame size to 8 (after receiving sending a
 
 void SetRumble(uint8_t command)
 {
-  //RMBL_PORT = command & 1;
+	RUMBLE_GPIO_Port->ODR &= ~RUMBLE_Pin;
+	RUMBLE_GPIO_Port->ODR |= (RUMBLE_Pin)*(command & 1);
 }
 
 
