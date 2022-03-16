@@ -25,6 +25,7 @@
 //#include "COMMS.h"
 //#include "GC_DAC.h"
 //#include "COMMS.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,22 +61,27 @@ static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN 0 */
 
 //volatile uint8_t  StYXBA =    0x00;
-//volatile uint8_t  LRZDpad =   0x80;
-volatile uint8_t  ControlX =  128;
+//volatile uint8_t  LRZDpad =   0x80; // these are pulled straight from pin registers and are not necessary for the code
+
+volatile uint8_t  ControlX =  128; 	//X,Y for control stick
 volatile uint8_t  ControlY =  128;
-volatile uint8_t  CstickX =   128;
+
+volatile uint8_t  CstickX =   128; 	// X,Y for C-Stick
 volatile uint8_t  CstickY =   128;
-volatile uint8_t  AnalogL =   0;
+
+const uint8_t  AnalogL =   0;		// Analog L and R triggers (only R is used so L can remain at zero)
 volatile uint8_t  AnalogR =   0;
-volatile uint8_t  DPad =      0;
 
-int count = 0;
-int avg_count = 0;
-int count_num = 0;
+volatile uint8_t  DPad =      0;	// Dpad values
 
-bool dPad_on = false;
+//int count = 0;
+//int total_count = 0;			// for debugging
+//int avg_count = 0;
+//int count_num = 0;
 
-//volatile uint8_t  rumble =    0;
+bool dPad_on = false;			// if MX and MY are pressed this becomes true, allowing the use of the Dpad
+
+//volatile uint8_t  rumble =    0;	// rumble is pulled straight from console polls into the output pin registers
 
 /* USER CODE END 0 */
 
@@ -106,9 +112,9 @@ int main(void)
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
+  MX_GPIO_Init();
   MX_USB_DEVICE_Init();
   MX_USART1_UART_Init();
-  MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -117,11 +123,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	while (1)
 	{
-		count++;
-		Digital_Analog_Conversion();
 
-		//printf("loopin");
-		//UpdateAnalog();
+
+	     //count++;
+
+	     //Digital_Analog_Conversion();  // Performs the DAC algorithm for Control Stick, Cstick and analog triggers
+					   // SEE DAC.c for details
+					   // Runs continuously until interrupted by an external interrupt
+					   // ISR below is HAL_GPIO_EXTI_Callback()
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -245,11 +256,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : RIGHT_Pin LEFT_Pin UP_Pin DOWN_Pin
-                           C_RIGHT_Pin C_LEFT_Pin C_UP_Pin C_DOWN_Pin
+  /*Configure GPIO pins : RIGHT_Pin LEFT_Pin C_RIGHT_Pin C_LEFT_Pin
+                           C_UP_Pin C_DOWN_Pin UP_Pin DOWN_Pin
                            MX_Pin MY_Pin */
-  GPIO_InitStruct.Pin = RIGHT_Pin|LEFT_Pin|UP_Pin|DOWN_Pin
-                          |C_RIGHT_Pin|C_LEFT_Pin|C_UP_Pin|C_DOWN_Pin
+  GPIO_InitStruct.Pin = RIGHT_Pin|LEFT_Pin|C_RIGHT_Pin|C_LEFT_Pin
+                          |C_UP_Pin|C_DOWN_Pin|UP_Pin|DOWN_Pin
                           |MX_Pin|MY_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
@@ -278,14 +289,16 @@ static void MX_GPIO_Init(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	count_num++;
-	ReceiveCommand();
+  //count_num++;
+  Digital_Analog_Conversion();
+  ReceiveCommand(); // reads incoming message from console and replies accordingly
+		    // See COMMS.h for more detail
 
-	//count_num=count;
-	avg_count = count;
-	count = 0;
+  //count_num=count;
+  //avg_count = count; // debugging
+  //count = 0;
 
-	__HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin);
+  __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin); // clear interrupt flag
 }
 
 /* USER CODE END 4 */

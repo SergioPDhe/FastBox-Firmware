@@ -1,7 +1,7 @@
-GC_DAC.c:5:6:Digital_Analog_Conversion	8	static
-GC_DAC.c:14:6:ControlDAC	24	static
-GC_DAC.c:291:6:CStickDAC	8	static
-GC_DAC.c:297:6:TriggersDAC	4	static
-GC_DAC.c:312:9:Cstick2Dpad	24	static
-GC_DAC.c:320:11:SOCD_TwoIPNoR	16	static
-GC_DAC.c:359:6:UpdateAnalog	8	static
+GC_DAC.c:6:6:Digital_Analog_Conversion	8	static
+GC_DAC.c:18:6:ControlDAC	16	static
+GC_DAC.c:293:6:CStickDAC	8	static
+GC_DAC.c:299:6:TriggersDAC	4	static
+GC_DAC.c:320:9:Cstick2Dpad	24	static
+GC_DAC.c:328:11:SOCD_TwoIPNoR	16	static
+GC_DAC.c:367:6:UpdateAnalog	8	static

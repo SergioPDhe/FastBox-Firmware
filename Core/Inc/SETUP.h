@@ -5,6 +5,9 @@
 
 #define BTN_PORT GPIOA
 #define BTN_PIN BTN_PORT->IDR
+
+#define BTN_StYXBA 0b00011111
+#define BTN_LRZ 0b11100000
 //#define BTN_DDR DDRA
 
 #define BTN_A 0
@@ -16,8 +19,7 @@
 #define BTN_R 6
 #define BTN_L 7
 
-#define BTN_LR 192 // 0b 1100 0000
-
+#define BTN_LR (0b11<<BTN_R)// 0b 1100 0000
 
 #define CTRL_PORT GPIOB
 #define CTRL_PIN CTRL_PORT->IDR
@@ -25,15 +27,14 @@
 
 #define CTRL_RIGHT 0
 #define CTRL_LEFT 1
-#define CTRL_UP 2
-#define CTRL_DOWN 10
+#define CTRL_UP 6
+#define CTRL_DOWN 7
 #define CTRL_MX 8
 #define CTRL_MY 9
 
-#define CTRL_HORIZ 3 // 	0b 0000 0000 0011
-#define CTRL_VERT 1028 // 	0b 0100 0000 0100
-#define CTRL_MOD 768 //  	0b 0011 0000 0000
-
+#define CTRL_HORIZ 0b11  	// 	0b 0000 0000 0011
+#define CTRL_VERT (0b11<<CTRL_UP) // 	0b 0000 1100 0000
+#define CTRL_MOD (0b11<<CTRL_MX)  //  	0b 0011 0000 0000
 
 #define CSTK_PORT GPIOB
 #define CSTK_PIN CSTK_PORT->IDR
@@ -48,25 +49,24 @@
 #define SHIELD_PIN SHIELD_PORT->IDR
 //#define SHIELD_DDR DDRA
 
-#define SHIELD_MS 4
-#define SHIELD_LS 5
+#define SHIELD_MS 8
+#define SHIELD_LS 9
 
-#define CSTK_CSTK 61440 // 0b 1111 0000 0000 0000
+#define SHIELD_MOD (0b11<<SHIELD_MS)
 
-#define CSTK_HORIZ 12288 // 0b 0011 0000 0000 0000
-#define CSTK_VERT 49152 // 0b 1100 0000 0000 0000
+#define CSTK_CSTK (0b1111 << CSTK_RIGHT) // 0b 1111 0000 0000 0000
 
-#define CSTK_SHLD 48 // 0b 1111 0000 0000 0000
+#define CSTK_HORIZ (0b11 << CSTK_RIGHT) // 0b 0011 0000 0000 0000
+#define CSTK_VERT (0b11 << CSTK_UP)  // 0b 1100 0000 0000 0000
 
+//#define CSTK_SHLD 48 // 0b 1111 0000 0000 0000
 
 #define RMBL_PORT GPIOB
-#define RMBL_PIN RMBL_PORT->IDR
+#define RMBL_PIN RMBL_PORT->ODR
 //#define RMBL_DDR DDRB
 
 #define RMBL_SIG 4
-
-
-
+#define RMBL_MASK (1<<RMBL_SIG)
 
 #define MAXOFFSET 80
 #define NEUTRAL 128
@@ -85,9 +85,8 @@
 #define DIAG_SHIELD_X 56
 #define DIAG_SHIELD_Y 55
 
-
 // modX
-//tilts
+// tilts
 #define MODX_H_X 53
 #define MODX_H_Y 0
 
@@ -133,17 +132,16 @@
 #define MODX_D_CR_B_X 51
 #define MODX_D_CR_B_Y 43
 
-//wavedash
+// wavedash
 #define MODX_D_SHIELD_X 51
 #define MODX_D_SHIELD_Y 30
 
-//angled fsmash
+// angled fsmash
 #define MODX_FSMASH_X 68
 #define MODX_FSMASH_Y 42
 
-
 // modY
-//tilts//////////////////////////////////
+// tilts//////////////////////////////////
 #define MODY_H_X 27
 #define MODY_H_Y 0
 
@@ -156,7 +154,6 @@
 
 #define MODY_V_B_X 0
 #define MODY_V_B_Y 59
-
 
 // upB angles///////////////////////////////
 #define MODY_DIAG_X 25
@@ -174,7 +171,6 @@
 #define MODY_D_CR_X 51
 #define MODY_D_CR_Y 61
 
-
 // extended upB angles///////////////////////
 #define MODY_DIAG_B_X 31
 #define MODY_DIAG_B_Y 73
@@ -191,14 +187,12 @@
 #define MODY_D_CR_B_X 47
 #define MODY_D_CR_B_Y 57
 
-
-//wavedash//////////////////////////////////////////
+// wavedash//////////////////////////////////////////
 #define MODY_D_SHIELD_X 40
 #define MODY_D_SHIELD_Y 68
 
 ////////////////////////////////////////////////////////////////
 #define SHIELD_MID 95
 #define SHIELD_LIGHT 50
-
 
 #endif

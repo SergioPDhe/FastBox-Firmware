@@ -1,0 +1,7 @@
+DAC.c:6:6:Digital_Analog_Conversion	8	static
+DAC.c:17:6:ControlDAC	16	static
+DAC.c:291:6:CStickDAC	8	static
+DAC.c:297:6:TriggersDAC	4	static
+DAC.c:318:9:Cstick2Dpad	24	static
+DAC.c:326:11:SOCD_TwoIPNoR	16	static
+DAC.c:365:6:UpdateAnalog	8	static

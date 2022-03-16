@@ -6,7 +6,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/COMMS.c \
-../Core/Src/GC_DAC.c \
+../Core/Src/DAC.c \
 ../Core/Src/main.c \
 ../Core/Src/stm32f4xx_hal_msp.c \
 ../Core/Src/stm32f4xx_it.c \
@@ -16,7 +16,7 @@ C_SRCS += \
 
 C_DEPS += \
 ./Core/Src/COMMS.d \
-./Core/Src/GC_DAC.d \
+./Core/Src/DAC.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f4xx_hal_msp.d \
 ./Core/Src/stm32f4xx_it.d \
@@ -26,7 +26,7 @@ C_DEPS += \
 
 OBJS += \
 ./Core/Src/COMMS.o \
-./Core/Src/GC_DAC.o \
+./Core/Src/DAC.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f4xx_hal_msp.o \
 ./Core/Src/stm32f4xx_it.o \
@@ -42,7 +42,7 @@ Core/Src/%.o: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/COMMS.d ./Core/Src/COMMS.o ./Core/Src/GC_DAC.d ./Core/Src/GC_DAC.o ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o
+	-$(RM) ./Core/Src/COMMS.d ./Core/Src/COMMS.o ./Core/Src/DAC.d ./Core/Src/DAC.o ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/stm32f4xx_hal_msp.d ./Core/Src/stm32f4xx_hal_msp.o ./Core/Src/stm32f4xx_it.d ./Core/Src/stm32f4xx_it.o ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/system_stm32f4xx.d ./Core/Src/system_stm32f4xx.o
 
 .PHONY: clean-Core-2f-Src
 
