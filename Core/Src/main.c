@@ -25,6 +25,7 @@
 //#include "COMMS.h"
 //#include "GC_DAC.h"
 //#include "COMMS.h"
+#include "SETUP.h"
 
 /* USER CODE END Includes */
 
@@ -47,6 +48,23 @@ UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 
+volatile struct controller_inputs
+{
+  uint8_t reportID;
+  uint8_t buttons;
+  int8_t ctrl_x;
+  int8_t ctrl_y;
+  int8_t cstk_x;
+  int8_t cstk_y;
+  uint8_t analog_l;
+  uint8_t analog_r;
+  uint8_t dpad;
+};
+
+extern USBD_HandleTypeDef hUsbDeviceFS;
+
+volatile struct controller_inputs ControllerInputs;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -60,8 +78,12 @@ static void MX_USART1_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+
+
 //volatile uint8_t  StYXBA =    0x00;
 //volatile uint8_t  LRZDpad =   0x80; // these are pulled straight from pin registers and are not necessary for the code
+
+uint8_t modeUSB = 1;
 
 volatile uint8_t  ControlX =  128; 	//X,Y for control stick
 volatile uint8_t  ControlY =  128;
@@ -92,7 +114,15 @@ bool dPad_on = false;			// if MX and MY are pressed this becomes true, allowing 
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  ControllerInputs.reportID = 1;
+  ControllerInputs.buttons = 0;
+  ControllerInputs.ctrl_x = 0;
+  ControllerInputs.ctrl_y = 0;
+  ControllerInputs.cstk_x = 0;
+  ControllerInputs.cstk_y = 0;
+  ControllerInputs.analog_l = 0;
+  ControllerInputs.analog_r = 0;
+  ControllerInputs.dpad = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -123,6 +153,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 	while (1)
 	{
+	  if (modeUSB == 1)
+	  {
+	      UpdateInputsUSB();
+	  }
+
+
 
 
 	     //count++;
@@ -299,6 +335,23 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   //count = 0;
 
   __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin); // clear interrupt flag
+}
+
+void UpdateInputsUSB()
+{
+  Digital_Analog_Conversion();
+
+  ControllerInputs.buttons = ~BTN_PIN;
+
+  ControllerInputs.ctrl_x = ControlX-128;
+  ControllerInputs.ctrl_y = 128-ControlY;
+  ControllerInputs.cstk_x = CstickX-128;
+  ControllerInputs.cstk_y = CstickY-128;
+  ControllerInputs.analog_l = AnalogL;
+  ControllerInputs.analog_r = AnalogR;
+  ControllerInputs.dpad = Dpad2HatSwitch(DPad);
+
+  USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, &ControllerInputs, 9);
 }
 
 /* USER CODE END 4 */

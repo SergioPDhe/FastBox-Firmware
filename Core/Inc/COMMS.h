@@ -28,6 +28,8 @@ void SetRumble(uint8_t command);
 // extern volatile uint8_t  StYXBA;
 // extern volatile uint8_t  LRZDpad; not necessary
 
+extern uint8_t modeUSB;
+
 extern volatile uint8_t ControlX; // below from main.c
 extern volatile uint8_t ControlY;
 

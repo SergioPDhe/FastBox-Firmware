@@ -323,6 +323,33 @@ uint8_t Cstick2Dpad(uint8_t Stick)
   return (Pad | Stick);
 }
 
+uint8_t Dpad2HatSwitch(uint8_t Pad)
+{
+ switch (Pad)
+  {
+    case (0b0000):
+      return 8;
+    case (0b1000):
+      return 0;
+    case (0b1010):
+      return 1;
+    case (0b0010):
+      return 2;
+    case (0b0110):
+      return 3;
+    case (0b0100):
+      return 4;
+    case (0b0101):
+      return 5;
+    case (0b0001):
+      return 6;
+    case (0b1001):
+      return 7;
+    default:
+      return 8;
+  }
+}
+
 short int SOCD_TwoIPNoR(uint8_t input, uint8_t *SOCD) // input uses bits 0 and 1. 0 for Right/Up and 1 for Left/Down. // Activated inputs are low (e.g. 10 could be an 'up' input and 00 means both opposite inputs are pressed.)
 {                                                     // SOCD uses bits 0, 1, 2 and 3. 0 and 1 to check what inputs were pressed; 3 and 4 to check if inputs are locked.
                                                       // this code is a bit difficult to understand because of the binary, but it is very similar to SOCD code found in other open-source box firmwares such as the Crane Firmware: https://github.com/Crane1195/CL-FW

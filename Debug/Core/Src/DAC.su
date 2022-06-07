@@ -3,5 +3,6 @@ DAC.c:17:6:ControlDAC	16	static
 DAC.c:291:6:CStickDAC	8	static
 DAC.c:297:6:TriggersDAC	4	static
 DAC.c:318:9:Cstick2Dpad	24	static
-DAC.c:326:11:SOCD_TwoIPNoR	16	static
-DAC.c:365:6:UpdateAnalog	8	static
+DAC.c:326:9:Dpad2HatSwitch	16	static
+DAC.c:353:11:SOCD_TwoIPNoR	16	static
+DAC.c:392:6:UpdateAnalog	8	static

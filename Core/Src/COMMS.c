@@ -20,6 +20,7 @@ void ReceiveCommand() // main communication function - reads incoming console me
     break;
 
   case 0x00:	// console asks if a controller is plugged in
+    modeUSB = 0;
     FlushReceiveBuffer(); // flush UART buffer
     SendPollResponse(); // reply to tell console that the controller is now plugged in
     break;
