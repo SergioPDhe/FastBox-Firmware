@@ -5023,66 +5023,66 @@ LOAD c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 .iplt           0x0000000008007b40        0x0
  .iplt          0x0000000008007b40        0x0 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0000000008007b40       0x58
+.rodata         0x0000000008007b40       0x60
                 0x0000000008007b40                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008007b40       0x3e ./USB_DEVICE/App/usbd_desc.o
+ .rodata        0x0000000008007b40       0x45 ./USB_DEVICE/App/usbd_desc.o
  *(.rodata*)
  .rodata.AnalogL
-                0x0000000008007b7e        0x1 ./Core/Src/main.o
-                0x0000000008007b7e                AnalogL
- *fill*         0x0000000008007b7f        0x1 
+                0x0000000008007b85        0x1 ./Core/Src/main.o
+                0x0000000008007b85                AnalogL
+ *fill*         0x0000000008007b86        0x2 
  .rodata.AHBPrescTable
-                0x0000000008007b80       0x10 ./Core/Src/system_stm32f4xx.o
-                0x0000000008007b80                AHBPrescTable
+                0x0000000008007b88       0x10 ./Core/Src/system_stm32f4xx.o
+                0x0000000008007b88                AHBPrescTable
  .rodata.APBPrescTable
-                0x0000000008007b90        0x8 ./Core/Src/system_stm32f4xx.o
-                0x0000000008007b90                APBPrescTable
-                0x0000000008007b98                . = ALIGN (0x4)
+                0x0000000008007b98        0x8 ./Core/Src/system_stm32f4xx.o
+                0x0000000008007b98                APBPrescTable
+                0x0000000008007ba0                . = ALIGN (0x4)
 
-.ARM.extab      0x0000000008007b98        0x0
-                0x0000000008007b98                . = ALIGN (0x4)
+.ARM.extab      0x0000000008007ba0        0x0
+                0x0000000008007ba0                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008007b98                . = ALIGN (0x4)
+                0x0000000008007ba0                . = ALIGN (0x4)
 
-.ARM            0x0000000008007b98        0x8
-                0x0000000008007b98                . = ALIGN (0x4)
-                0x0000000008007b98                __exidx_start = .
+.ARM            0x0000000008007ba0        0x8
+                0x0000000008007ba0                . = ALIGN (0x4)
+                0x0000000008007ba0                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0000000008007b98        0x8 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x0000000008007ba0                __exidx_end = .
-                0x0000000008007ba0                . = ALIGN (0x4)
+ .ARM.exidx     0x0000000008007ba0        0x8 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x0000000008007ba8                __exidx_end = .
+                0x0000000008007ba8                . = ALIGN (0x4)
 
-.rel.dyn        0x0000000008007ba0        0x0
- .rel.iplt      0x0000000008007ba0        0x0 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0000000008007ba8        0x0
+ .rel.iplt      0x0000000008007ba8        0x0 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x0000000008007ba0        0x0
-                0x0000000008007ba0                . = ALIGN (0x4)
-                0x0000000008007ba0                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008007ba8        0x0
+                0x0000000008007ba8                . = ALIGN (0x4)
+                0x0000000008007ba8                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0000000008007ba0                PROVIDE (__preinit_array_end = .)
-                0x0000000008007ba0                . = ALIGN (0x4)
+                0x0000000008007ba8                PROVIDE (__preinit_array_end = .)
+                0x0000000008007ba8                . = ALIGN (0x4)
 
-.init_array     0x0000000008007ba0        0x4
-                0x0000000008007ba0                . = ALIGN (0x4)
-                0x0000000008007ba0                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008007ba8        0x4
+                0x0000000008007ba8                . = ALIGN (0x4)
+                0x0000000008007ba8                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008007ba0        0x4 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0000000008007ba4                PROVIDE (__init_array_end = .)
-                0x0000000008007ba4                . = ALIGN (0x4)
+ .init_array    0x0000000008007ba8        0x4 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0000000008007bac                PROVIDE (__init_array_end = .)
+                0x0000000008007bac                . = ALIGN (0x4)
 
-.fini_array     0x0000000008007ba4        0x4
-                0x0000000008007ba4                . = ALIGN (0x4)
+.fini_array     0x0000000008007bac        0x4
+                0x0000000008007bac                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008007ba4        0x4 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0000000008007bac        0x4 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008007ba8                . = ALIGN (0x4)
-                0x0000000008007ba8                _sidata = LOADADDR (.data)
+                0x0000000008007bb0                . = ALIGN (0x4)
+                0x0000000008007bb0                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x1dc load address 0x0000000008007ba8
+.data           0x0000000020000000      0x14c load address 0x0000000008007bb0
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -5129,100 +5129,100 @@ LOAD c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x00000000200000dc        0xa ./Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.o
  *fill*         0x00000000200000e6        0x2 
  .data.CUSTOM_HID_ReportDesc_FS
-                0x00000000200000e8       0x91 ./USB_DEVICE/App/usbd_custom_hid_if.o
- *fill*         0x0000000020000179        0x3 
+                0x00000000200000e8        0x2 ./USB_DEVICE/App/usbd_custom_hid_if.o
+ *fill*         0x00000000200000ea        0x2 
  .data.USBD_CustomHID_fops_FS
-                0x000000002000017c       0x10 ./USB_DEVICE/App/usbd_custom_hid_if.o
-                0x000000002000017c                USBD_CustomHID_fops_FS
- .data.FS_Desc  0x000000002000018c       0x1c ./USB_DEVICE/App/usbd_desc.o
-                0x000000002000018c                FS_Desc
+                0x00000000200000ec       0x10 ./USB_DEVICE/App/usbd_custom_hid_if.o
+                0x00000000200000ec                USBD_CustomHID_fops_FS
+ .data.FS_Desc  0x00000000200000fc       0x1c ./USB_DEVICE/App/usbd_desc.o
+                0x00000000200000fc                FS_Desc
  .data.USBD_FS_DeviceDesc
-                0x00000000200001a8       0x12 ./USB_DEVICE/App/usbd_desc.o
-                0x00000000200001a8                USBD_FS_DeviceDesc
- *fill*         0x00000000200001ba        0x2 
+                0x0000000020000118       0x12 ./USB_DEVICE/App/usbd_desc.o
+                0x0000000020000118                USBD_FS_DeviceDesc
+ *fill*         0x000000002000012a        0x2 
  .data.USBD_LangIDDesc
-                0x00000000200001bc        0x4 ./USB_DEVICE/App/usbd_desc.o
-                0x00000000200001bc                USBD_LangIDDesc
+                0x000000002000012c        0x4 ./USB_DEVICE/App/usbd_desc.o
+                0x000000002000012c                USBD_LangIDDesc
  .data.USBD_StringSerial
-                0x00000000200001c0       0x1a ./USB_DEVICE/App/usbd_desc.o
-                0x00000000200001c0                USBD_StringSerial
+                0x0000000020000130       0x1a ./USB_DEVICE/App/usbd_desc.o
+                0x0000000020000130                USBD_StringSerial
  *(.RamFunc)
  *(.RamFunc*)
-                0x00000000200001dc                . = ALIGN (0x4)
- *fill*         0x00000000200001da        0x2 
-                0x00000000200001dc                _edata = .
+                0x000000002000014c                . = ALIGN (0x4)
+ *fill*         0x000000002000014a        0x2 
+                0x000000002000014c                _edata = .
 
-.igot.plt       0x00000000200001dc        0x0 load address 0x0000000008007d84
- .igot.plt      0x00000000200001dc        0x0 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x00000000200001dc                . = ALIGN (0x4)
+.igot.plt       0x000000002000014c        0x0 load address 0x0000000008007cfc
+ .igot.plt      0x000000002000014c        0x0 c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x000000002000014c                . = ALIGN (0x4)
 
-.bss            0x00000000200001dc      0x978 load address 0x0000000008007d84
-                0x00000000200001dc                _sbss = .
-                0x00000000200001dc                __bss_start__ = _sbss
+.bss            0x000000002000014c      0x978 load address 0x0000000008007cfc
+                0x000000002000014c                _sbss = .
+                0x000000002000014c                __bss_start__ = _sbss
  *(.bss)
- .bss           0x00000000200001dc       0x1c c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .bss           0x000000002000014c       0x1c c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.bss*)
- .bss.posX      0x00000000200001f8        0x2 ./Core/Src/DAC.o
-                0x00000000200001f8                posX
- .bss.posY      0x00000000200001fa        0x2 ./Core/Src/DAC.o
-                0x00000000200001fa                posY
- .bss.posCX     0x00000000200001fc        0x2 ./Core/Src/DAC.o
-                0x00000000200001fc                posCX
- .bss.posCY     0x00000000200001fe        0x2 ./Core/Src/DAC.o
-                0x00000000200001fe                posCY
+ .bss.posX      0x0000000020000168        0x2 ./Core/Src/DAC.o
+                0x0000000020000168                posX
+ .bss.posY      0x000000002000016a        0x2 ./Core/Src/DAC.o
+                0x000000002000016a                posY
+ .bss.posCX     0x000000002000016c        0x2 ./Core/Src/DAC.o
+                0x000000002000016c                posCX
+ .bss.posCY     0x000000002000016e        0x2 ./Core/Src/DAC.o
+                0x000000002000016e                posCY
  .bss.Ctrl_SOCD_X
-                0x0000000020000200        0x1 ./Core/Src/DAC.o
-                0x0000000020000200                Ctrl_SOCD_X
+                0x0000000020000170        0x1 ./Core/Src/DAC.o
+                0x0000000020000170                Ctrl_SOCD_X
  .bss.Ctrl_SOCD_Y
-                0x0000000020000201        0x1 ./Core/Src/DAC.o
-                0x0000000020000201                Ctrl_SOCD_Y
+                0x0000000020000171        0x1 ./Core/Src/DAC.o
+                0x0000000020000171                Ctrl_SOCD_Y
  .bss.CStk_SOCD_X
-                0x0000000020000202        0x1 ./Core/Src/DAC.o
-                0x0000000020000202                CStk_SOCD_X
+                0x0000000020000172        0x1 ./Core/Src/DAC.o
+                0x0000000020000172                CStk_SOCD_X
  .bss.CStk_SOCD_Y
-                0x0000000020000203        0x1 ./Core/Src/DAC.o
-                0x0000000020000203                CStk_SOCD_Y
- .bss.AnalogR   0x0000000020000204        0x1 ./Core/Src/main.o
-                0x0000000020000204                AnalogR
- .bss.DPad      0x0000000020000205        0x1 ./Core/Src/main.o
-                0x0000000020000205                DPad
- .bss.dPad_on   0x0000000020000206        0x1 ./Core/Src/main.o
-                0x0000000020000206                dPad_on
+                0x0000000020000173        0x1 ./Core/Src/DAC.o
+                0x0000000020000173                CStk_SOCD_Y
+ .bss.AnalogR   0x0000000020000174        0x1 ./Core/Src/main.o
+                0x0000000020000174                AnalogR
+ .bss.DPad      0x0000000020000175        0x1 ./Core/Src/main.o
+                0x0000000020000175                DPad
+ .bss.dPad_on   0x0000000020000176        0x1 ./Core/Src/main.o
+                0x0000000020000176                dPad_on
  .bss.cfgidx.9913
-                0x0000000020000207        0x1 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
- .bss.mem.9965  0x0000000020000208       0x1c ./USB_DEVICE/Target/usbd_conf.o
+                0x0000000020000177        0x1 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .bss.mem.9965  0x0000000020000178       0x1c ./USB_DEVICE/Target/usbd_conf.o
  *(COMMON)
- COMMON         0x0000000020000224        0x3 ./Core/Src/DAC.o
-                0x0000000020000224                DAC_AnalogR
-                0x0000000020000225                DAC_ControlY
-                0x0000000020000226                DAC_ControlX
- *fill*         0x0000000020000227        0x1 
- COMMON         0x0000000020000228       0x50 ./Core/Src/main.o
-                0x0000000020000228                ControllerInputs
-                0x0000000020000234                huart1
- COMMON         0x0000000020000278        0x4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
-                0x0000000020000278                uwTick
- COMMON         0x000000002000027c      0x2d0 ./USB_DEVICE/App/usb_device.o
-                0x000000002000027c                hUsbDeviceFS
- COMMON         0x000000002000054c      0x200 ./USB_DEVICE/App/usbd_desc.o
-                0x000000002000054c                USBD_StrDesc
- COMMON         0x000000002000074c      0x408 ./USB_DEVICE/Target/usbd_conf.o
-                0x000000002000074c                hpcd_USB_OTG_FS
-                0x0000000020000b54                . = ALIGN (0x4)
-                0x0000000020000b54                _ebss = .
-                0x0000000020000b54                __bss_end__ = _ebss
+ COMMON         0x0000000020000194        0x3 ./Core/Src/DAC.o
+                0x0000000020000194                DAC_AnalogR
+                0x0000000020000195                DAC_ControlY
+                0x0000000020000196                DAC_ControlX
+ *fill*         0x0000000020000197        0x1 
+ COMMON         0x0000000020000198       0x50 ./Core/Src/main.o
+                0x0000000020000198                ControllerInputs
+                0x00000000200001a4                huart1
+ COMMON         0x00000000200001e8        0x4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+                0x00000000200001e8                uwTick
+ COMMON         0x00000000200001ec      0x2d0 ./USB_DEVICE/App/usb_device.o
+                0x00000000200001ec                hUsbDeviceFS
+ COMMON         0x00000000200004bc      0x200 ./USB_DEVICE/App/usbd_desc.o
+                0x00000000200004bc                USBD_StrDesc
+ COMMON         0x00000000200006bc      0x408 ./USB_DEVICE/Target/usbd_conf.o
+                0x00000000200006bc                hpcd_USB_OTG_FS
+                0x0000000020000ac4                . = ALIGN (0x4)
+                0x0000000020000ac4                _ebss = .
+                0x0000000020000ac4                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000b54      0x604 load address 0x0000000008007d84
-                0x0000000020000b58                . = ALIGN (0x8)
- *fill*         0x0000000020000b54        0x4 
+                0x0000000020000ac4      0x604 load address 0x0000000008007cfc
+                0x0000000020000ac8                . = ALIGN (0x8)
+ *fill*         0x0000000020000ac4        0x4 
                 [!provide]                        PROVIDE (end = .)
-                0x0000000020000b58                PROVIDE (_end = .)
-                0x0000000020000d58                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020000b58      0x200 
-                0x0000000020001158                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000d58      0x400 
-                0x0000000020001158                . = ALIGN (0x8)
+                0x0000000020000ac8                PROVIDE (_end = .)
+                0x0000000020000cc8                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020000ac8      0x200 
+                0x00000000200010c8                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020000cc8      0x400 
+                0x00000000200010c8                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -5558,53 +5558,53 @@ LOAD c:/st/stm32cubeide_1.8.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x0000000000010f56      0xb16 ./USB_DEVICE/App/usbd_desc.o
  .debug_line    0x0000000000011a6c      0xe35 ./USB_DEVICE/Target/usbd_conf.o
 
-.debug_str      0x0000000000000000    0x8a7f4
+.debug_str      0x0000000000000000    0x8a7f8
  .debug_str     0x0000000000000000    0x815a1 ./Core/Src/COMMS.o
                                       0x81894 (size before relaxing)
  .debug_str     0x00000000000815a1      0x129 ./Core/Src/DAC.o
                                       0x8188b (size before relaxing)
- .debug_str     0x00000000000816ca     0x5a1b ./Core/Src/main.o
-                                      0x87392 (size before relaxing)
- .debug_str     0x00000000000870e5       0x56 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_str     0x00000000000816ca     0x5a19 ./Core/Src/main.o
+                                      0x87390 (size before relaxing)
+ .debug_str     0x00000000000870e3       0x56 ./Core/Src/stm32f4xx_hal_msp.o
                                       0x815d1 (size before relaxing)
- .debug_str     0x000000000008713b      0x3fd ./Core/Src/stm32f4xx_it.o
+ .debug_str     0x0000000000087139      0x3fd ./Core/Src/stm32f4xx_it.o
                                       0x8144c (size before relaxing)
- .debug_str     0x0000000000087538       0xaf ./Core/Src/system_stm32f4xx.o
+ .debug_str     0x0000000000087536       0xaf ./Core/Src/system_stm32f4xx.o
                                       0x80d8c (size before relaxing)
- .debug_str     0x00000000000875e7       0x36 ./Core/Startup/startup_stm32f411ceux.o
+ .debug_str     0x00000000000875e5       0x36 ./Core/Startup/startup_stm32f411ceux.o
                                          0x77 (size before relaxing)
- .debug_str     0x000000000008761d      0x583 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_str     0x000000000008761b      0x583 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                                       0x81716 (size before relaxing)
- .debug_str     0x0000000000087ba0      0x399 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_str     0x0000000000087b9e      0x399 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
                                       0x814f3 (size before relaxing)
- .debug_str     0x0000000000087f39      0x122 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_str     0x0000000000087f37      0x122 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
                                       0x80f33 (size before relaxing)
- .debug_str     0x000000000008805b      0x564 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.o
+ .debug_str     0x0000000000088059      0x564 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.o
                                       0x81564 (size before relaxing)
- .debug_str     0x00000000000885bf      0x13f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.o
+ .debug_str     0x00000000000885bd      0x13f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.o
                                       0x8112f (size before relaxing)
- .debug_str     0x00000000000886fe      0x259 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_str     0x00000000000886fc      0x259 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
                                       0x8118e (size before relaxing)
- .debug_str     0x0000000000088957      0x60a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
+ .debug_str     0x0000000000088955      0x60a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o
                                       0x81702 (size before relaxing)
- .debug_str     0x0000000000088f61      0x697 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o
+ .debug_str     0x0000000000088f5f      0x697 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.o
                                       0x8169b (size before relaxing)
- .debug_str     0x00000000000895f8      0x5c5 ./Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.o
-                                      0x865e8 (size before relaxing)
- .debug_str     0x0000000000089bbd      0x1a2 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
-                                      0x86233 (size before relaxing)
- .debug_str     0x0000000000089d5f      0x14d ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
-                                      0x861f1 (size before relaxing)
- .debug_str     0x0000000000089eac       0xc9 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
-                                      0x86141 (size before relaxing)
- .debug_str     0x0000000000089f75       0xe6 ./USB_DEVICE/App/usb_device.o
-                                      0x863be (size before relaxing)
- .debug_str     0x000000000008a05b      0x3dc ./USB_DEVICE/App/usbd_custom_hid_if.o
-                                      0x866d6 (size before relaxing)
- .debug_str     0x000000000008a437      0x269 ./USB_DEVICE/App/usbd_desc.o
-                                      0x8608e (size before relaxing)
- .debug_str     0x000000000008a6a0      0x154 ./USB_DEVICE/Target/usbd_conf.o
-                                      0x86e9c (size before relaxing)
+ .debug_str     0x00000000000895f6      0x5c5 ./Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.o
+                                      0x865e6 (size before relaxing)
+ .debug_str     0x0000000000089bbb      0x1a2 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+                                      0x86231 (size before relaxing)
+ .debug_str     0x0000000000089d5d      0x14d ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+                                      0x861ef (size before relaxing)
+ .debug_str     0x0000000000089eaa       0xc9 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+                                      0x8613f (size before relaxing)
+ .debug_str     0x0000000000089f73       0xe6 ./USB_DEVICE/App/usb_device.o
+                                      0x863bc (size before relaxing)
+ .debug_str     0x000000000008a059      0x3dc ./USB_DEVICE/App/usbd_custom_hid_if.o
+                                      0x866d4 (size before relaxing)
+ .debug_str     0x000000000008a435      0x26f ./USB_DEVICE/App/usbd_desc.o
+                                      0x86092 (size before relaxing)
+ .debug_str     0x000000000008a6a4      0x154 ./USB_DEVICE/Target/usbd_conf.o
+                                      0x86e9a (size before relaxing)
 
 .comment        0x0000000000000000       0x53
  .comment       0x0000000000000000       0x53 ./Core/Src/COMMS.o

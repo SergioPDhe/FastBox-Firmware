@@ -7,43 +7,43 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         000079a8  08000198  08000198  00010198  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000058  08007b40  08007b40  00017b40  2**2
+  2 .rodata       00000060  08007b40  08007b40  00017b40  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08007b98  08007b98  000201dc  2**0
+  3 .ARM.extab    00000000  08007ba0  08007ba0  0002014c  2**0
                   CONTENTS
-  4 .ARM          00000008  08007b98  08007b98  00017b98  2**2
+  4 .ARM          00000008  08007ba0  08007ba0  00017ba0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08007ba0  08007ba0  000201dc  2**0
+  5 .preinit_array 00000000  08007ba8  08007ba8  0002014c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08007ba0  08007ba0  00017ba0  2**2
+  6 .init_array   00000004  08007ba8  08007ba8  00017ba8  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  7 .fini_array   00000004  08007ba4  08007ba4  00017ba4  2**2
+  7 .fini_array   00000004  08007bac  08007bac  00017bac  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  8 .data         000001dc  20000000  08007ba8  00020000  2**2
+  8 .data         0000014c  20000000  08007bb0  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000978  200001dc  08007d84  000201dc  2**2
+  9 .bss          00000978  2000014c  08007cfc  0002014c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  20000b54  08007d84  00020b54  2**0
+ 10 ._user_heap_stack 00000604  20000ac4  08007cfc  00020ac4  2**0
                   ALLOC
- 11 .ARM.attributes 00000030  00000000  00000000  000201dc  2**0
+ 11 .ARM.attributes 00000030  00000000  00000000  0002014c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00016ac2  00000000  00000000  0002020c  2**0
+ 12 .debug_info   00016ac2  00000000  00000000  0002017c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 0000346d  00000000  00000000  00036cce  2**0
+ 13 .debug_abbrev 0000346d  00000000  00000000  00036c3e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000df8  00000000  00000000  0003a140  2**3
+ 14 .debug_aranges 00000df8  00000000  00000000  0003a0b0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000cc0  00000000  00000000  0003af38  2**3
+ 15 .debug_ranges 00000cc0  00000000  00000000  0003aea8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0001936e  00000000  00000000  0003bbf8  2**0
+ 16 .debug_macro  0001936e  00000000  00000000  0003bb68  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   000128a1  00000000  00000000  00054f66  2**0
+ 17 .debug_line   000128a1  00000000  00000000  00054ed6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008a7f4  00000000  00000000  00067807  2**0
+ 18 .debug_str    0008a7f8  00000000  00000000  00067777  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000f1ffb  2**0
+ 19 .comment      00000053  00000000  00000000  000f1f6f  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000037d8  00000000  00000000  000f2050  2**2
+ 20 .debug_frame  000037d8  00000000  00000000  000f1fc4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -60,7 +60,7 @@ Disassembly of section .text:
  80001aa:	2301      	movs	r3, #1
  80001ac:	7023      	strb	r3, [r4, #0]
  80001ae:	bd10      	pop	{r4, pc}
- 80001b0:	200001dc 	.word	0x200001dc
+ 80001b0:	2000014c 	.word	0x2000014c
  80001b4:	00000000 	.word	0x00000000
  80001b8:	08007b28 	.word	0x08007b28
 
@@ -73,7 +73,7 @@ Disassembly of section .text:
  80001c6:	f3af 8000 	nop.w
  80001ca:	bd08      	pop	{r3, pc}
  80001cc:	00000000 	.word	0x00000000
- 80001d0:	200001e0 	.word	0x200001e0
+ 80001d0:	20000150 	.word	0x20000150
  80001d4:	08007b28 	.word	0x08007b28
 
 080001d8 <__aeabi_uldivmod>:
@@ -590,13 +590,13 @@ void SendInputs() // sends inputs to console
  8000638:	bf00      	nop
  800063a:	bd80      	pop	{r7, pc}
  800063c:	40020000 	.word	0x40020000
- 8000640:	20000205 	.word	0x20000205
+ 8000640:	20000175 	.word	0x20000175
  8000644:	20000001 	.word	0x20000001
  8000648:	20000002 	.word	0x20000002
  800064c:	20000003 	.word	0x20000003
  8000650:	20000004 	.word	0x20000004
- 8000654:	08007b7e 	.word	0x08007b7e
- 8000658:	20000204 	.word	0x20000204
+ 8000654:	08007b85 	.word	0x08007b85
+ 8000658:	20000174 	.word	0x20000174
 
 0800065c <SendByte>:
 
@@ -1470,19 +1470,19 @@ void ControlDAC() // DAC for analog sticks + dpad - mostly based on Crane's DAC 
       break;
  8000bfe:	e216      	b.n	800102e <ControlDAC+0x6da>
  8000c00:	40020400 	.word	0x40020400
- 8000c04:	20000200 	.word	0x20000200
- 8000c08:	200001f8 	.word	0x200001f8
- 8000c0c:	20000201 	.word	0x20000201
- 8000c10:	200001fa 	.word	0x200001fa
- 8000c14:	20000202 	.word	0x20000202
- 8000c18:	200001fc 	.word	0x200001fc
- 8000c1c:	20000203 	.word	0x20000203
- 8000c20:	200001fe 	.word	0x200001fe
- 8000c24:	20000206 	.word	0x20000206
+ 8000c04:	20000170 	.word	0x20000170
+ 8000c08:	20000168 	.word	0x20000168
+ 8000c0c:	20000171 	.word	0x20000171
+ 8000c10:	2000016a 	.word	0x2000016a
+ 8000c14:	20000172 	.word	0x20000172
+ 8000c18:	2000016c 	.word	0x2000016c
+ 8000c1c:	20000173 	.word	0x20000173
+ 8000c20:	2000016e 	.word	0x2000016e
+ 8000c24:	20000176 	.word	0x20000176
  8000c28:	20000003 	.word	0x20000003
  8000c2c:	20000004 	.word	0x20000004
- 8000c30:	20000226 	.word	0x20000226
- 8000c34:	20000225 	.word	0x20000225
+ 8000c30:	20000196 	.word	0x20000196
+ 8000c34:	20000195 	.word	0x20000195
  8000c38:	40020000 	.word	0x40020000
 
     case (0b00000010):             // vertical /////////////////////////////////
@@ -1844,10 +1844,10 @@ void ControlDAC() // DAC for analog sticks + dpad - mostly based on Crane's DAC 
  8000ec4:	e0b3      	b.n	800102e <ControlDAC+0x6da>
  8000ec6:	bf00      	nop
  8000ec8:	40020000 	.word	0x40020000
- 8000ecc:	200001fa 	.word	0x200001fa
- 8000ed0:	20000225 	.word	0x20000225
- 8000ed4:	200001f8 	.word	0x200001f8
- 8000ed8:	20000226 	.word	0x20000226
+ 8000ecc:	2000016a 	.word	0x2000016a
+ 8000ed0:	20000195 	.word	0x20000195
+ 8000ed4:	20000168 	.word	0x20000168
+ 8000ed8:	20000196 	.word	0x20000196
  8000edc:	40020400 	.word	0x40020400
         }
       }
@@ -2234,11 +2234,11 @@ void ControlDAC() // DAC for analog sticks + dpad - mostly based on Crane's DAC 
         return;
  800119a:	e1c3      	b.n	8001524 <ControlDAC+0xbd0>
  800119c:	40020400 	.word	0x40020400
- 80011a0:	200001f8 	.word	0x200001f8
- 80011a4:	20000226 	.word	0x20000226
- 80011a8:	200001fa 	.word	0x200001fa
- 80011ac:	20000225 	.word	0x20000225
- 80011b0:	200001fc 	.word	0x200001fc
+ 80011a0:	20000168 	.word	0x20000168
+ 80011a4:	20000196 	.word	0x20000196
+ 80011a8:	2000016a 	.word	0x2000016a
+ 80011ac:	20000195 	.word	0x20000195
+ 80011b0:	2000016c 	.word	0x2000016c
  80011b4:	20000003 	.word	0x20000003
  80011b8:	20000004 	.word	0x20000004
  80011bc:	40020000 	.word	0x40020000
@@ -2592,10 +2592,10 @@ void ControlDAC() // DAC for analog sticks + dpad - mostly based on Crane's DAC 
  8001468:	e05c      	b.n	8001524 <ControlDAC+0xbd0>
  800146a:	bf00      	nop
  800146c:	40020400 	.word	0x40020400
- 8001470:	200001f8 	.word	0x200001f8
- 8001474:	20000226 	.word	0x20000226
- 8001478:	200001fa 	.word	0x200001fa
- 800147c:	20000225 	.word	0x20000225
+ 8001470:	20000168 	.word	0x20000168
+ 8001474:	20000196 	.word	0x20000196
+ 8001478:	2000016a 	.word	0x2000016a
+ 800147c:	20000195 	.word	0x20000195
  8001480:	40020000 	.word	0x40020000
       if (~CSTK_PIN & (1 << CSTK_RIGHT))
  8001484:	4b29      	ldr	r3, [pc, #164]	; (800152c <ControlDAC+0xbd8>)
@@ -2692,11 +2692,11 @@ void ControlDAC() // DAC for analog sticks + dpad - mostly based on Crane's DAC 
  8001528:	bd80      	pop	{r7, pc}
  800152a:	bf00      	nop
  800152c:	40020400 	.word	0x40020400
- 8001530:	200001f8 	.word	0x200001f8
- 8001534:	20000226 	.word	0x20000226
- 8001538:	200001fa 	.word	0x200001fa
- 800153c:	20000225 	.word	0x20000225
- 8001540:	20000206 	.word	0x20000206
+ 8001530:	20000168 	.word	0x20000168
+ 8001534:	20000196 	.word	0x20000196
+ 8001538:	2000016a 	.word	0x2000016a
+ 800153c:	20000195 	.word	0x20000195
+ 8001540:	20000176 	.word	0x20000176
 
 08001544 <TriggersDAC>:
   CstickX = NEUTRAL + (MAXOFFSET * SOCD_TwoIPNoR((CSTK_PIN & CSTK_HORIZ), &CStk_SOCD_X));
@@ -2759,7 +2759,7 @@ void TriggersDAC()
  8001590:	4770      	bx	lr
  8001592:	bf00      	nop
  8001594:	40020000 	.word	0x40020000
- 8001598:	20000204 	.word	0x20000204
+ 8001598:	20000174 	.word	0x20000174
 
 0800159c <Cstick2Dpad>:
 
@@ -3041,13 +3041,13 @@ void UpdateAnalog() // updates the Control stick values after DAC is done
 }
  8001740:	bf00      	nop
  8001742:	bd80      	pop	{r7, pc}
- 8001744:	20000226 	.word	0x20000226
+ 8001744:	20000196 	.word	0x20000196
  8001748:	20000001 	.word	0x20000001
- 800174c:	20000225 	.word	0x20000225
+ 800174c:	20000195 	.word	0x20000195
  8001750:	20000002 	.word	0x20000002
- 8001754:	20000206 	.word	0x20000206
+ 8001754:	20000176 	.word	0x20000176
  8001758:	40020400 	.word	0x40020400
- 800175c:	20000205 	.word	0x20000205
+ 800175c:	20000175 	.word	0x20000175
  8001760:	20000003 	.word	0x20000003
  8001764:	20000004 	.word	0x20000004
 
@@ -3137,7 +3137,7 @@ int main(void)
  80017be:	f000 f951 	bl	8001a64 <UpdateInputsUSB>
 	  if (modeUSB == 1)
  80017c2:	e7f8      	b.n	80017b6 <main+0x4e>
- 80017c4:	20000228 	.word	0x20000228
+ 80017c4:	20000198 	.word	0x20000198
  80017c8:	20000000 	.word	0x20000000
 
 080017cc <SystemClock_Config>:
@@ -3334,7 +3334,7 @@ static void MX_USART1_UART_Init(void)
  80018e2:	bf00      	nop
  80018e4:	bd80      	pop	{r7, pc}
  80018e6:	bf00      	nop
- 80018e8:	20000234 	.word	0x20000234
+ 80018e8:	200001a4 	.word	0x200001a4
  80018ec:	40011000 	.word	0x40011000
  80018f0:	000f4240 	.word	0x000f4240
 
@@ -3656,14 +3656,14 @@ void UpdateInputsUSB()
  8001aec:	bf00      	nop
  8001aee:	bd80      	pop	{r7, pc}
  8001af0:	40020000 	.word	0x40020000
- 8001af4:	20000228 	.word	0x20000228
+ 8001af4:	20000198 	.word	0x20000198
  8001af8:	20000001 	.word	0x20000001
  8001afc:	20000002 	.word	0x20000002
  8001b00:	20000003 	.word	0x20000003
  8001b04:	20000004 	.word	0x20000004
- 8001b08:	20000204 	.word	0x20000204
- 8001b0c:	20000205 	.word	0x20000205
- 8001b10:	2000027c 	.word	0x2000027c
+ 8001b08:	20000174 	.word	0x20000174
+ 8001b0c:	20000175 	.word	0x20000175
+ 8001b10:	200001ec 	.word	0x200001ec
 
 08001b14 <Error_Handler>:
 /**
@@ -4040,7 +4040,7 @@ void OTG_FS_IRQHandler(void)
  8001c6e:	bf00      	nop
  8001c70:	bd80      	pop	{r7, pc}
  8001c72:	bf00      	nop
- 8001c74:	2000074c 	.word	0x2000074c
+ 8001c74:	200006bc 	.word	0x200006bc
 
 08001c78 <SystemInit>:
   *         configuration.
@@ -4155,13 +4155,13 @@ LoopFillZerobss:
   ldr r0, =_sdata
  8001cd8:	20000000 	.word	0x20000000
   ldr r1, =_edata
- 8001cdc:	200001dc 	.word	0x200001dc
+ 8001cdc:	2000014c 	.word	0x2000014c
   ldr r2, =_sidata
- 8001ce0:	08007ba8 	.word	0x08007ba8
+ 8001ce0:	08007bb0 	.word	0x08007bb0
   ldr r2, =_sbss
- 8001ce4:	200001dc 	.word	0x200001dc
+ 8001ce4:	2000014c 	.word	0x2000014c
   ldr r4, =_ebss
- 8001ce8:	20000b54 	.word	0x20000b54
+ 8001ce8:	20000ac4 	.word	0x20000ac4
 
 08001cec <ADC_IRQHandler>:
  * @retval None       
@@ -4324,7 +4324,7 @@ __weak void HAL_IncTick(void)
  8001db0:	4770      	bx	lr
  8001db2:	bf00      	nop
  8001db4:	20000010 	.word	0x20000010
- 8001db8:	20000278 	.word	0x20000278
+ 8001db8:	200001e8 	.word	0x200001e8
 
 08001dbc <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other 
@@ -4344,7 +4344,7 @@ __weak uint32_t HAL_GetTick(void)
  8001dc8:	f85d 7b04 	ldr.w	r7, [sp], #4
  8001dcc:	4770      	bx	lr
  8001dce:	bf00      	nop
- 8001dd0:	20000278 	.word	0x20000278
+ 8001dd0:	200001e8 	.word	0x200001e8
 
 08001dd4 <HAL_Delay>:
   *       implementations in user file.
@@ -9661,7 +9661,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(RCC_ClkInitTypeDef  *RCC_ClkInitStruct, ui
  8003d2a:	bf00      	nop
  8003d2c:	40023c00 	.word	0x40023c00
  8003d30:	40023800 	.word	0x40023800
- 8003d34:	08007b80 	.word	0x08007b80
+ 8003d34:	08007b88 	.word	0x08007b88
  8003d38:	20000008 	.word	0x20000008
  8003d3c:	2000000c 	.word	0x2000000c
 
@@ -9902,7 +9902,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8003ee0:	4618      	mov	r0, r3
  8003ee2:	bd80      	pop	{r7, pc}
  8003ee4:	40023800 	.word	0x40023800
- 8003ee8:	08007b90 	.word	0x08007b90
+ 8003ee8:	08007b98 	.word	0x08007b98
 
 08003eec <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -9928,7 +9928,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  8003f08:	4618      	mov	r0, r3
  8003f0a:	bd80      	pop	{r7, pc}
  8003f0c:	40023800 	.word	0x40023800
- 8003f10:	08007b90 	.word	0x08007b90
+ 8003f10:	08007b98 	.word	0x08007b98
 
 08003f14 <HAL_HalfDuplex_Init>:
   * @param  huart  Pointer to a UART_HandleTypeDef structure that contains
@@ -14501,9 +14501,9 @@ static uint8_t USBD_CUSTOM_HID_Setup(USBD_HandleTypeDef *pdev,
             len = MIN(USBD_CUSTOM_HID_REPORT_DESC_SIZE, req->wLength);
  8005ca2:	683b      	ldr	r3, [r7, #0]
  8005ca4:	88db      	ldrh	r3, [r3, #6]
- 8005ca6:	2b91      	cmp	r3, #145	; 0x91
+ 8005ca6:	2b02      	cmp	r3, #2
  8005ca8:	bf28      	it	cs
- 8005caa:	2391      	movcs	r3, #145	; 0x91
+ 8005caa:	2302      	movcs	r3, #2
  8005cac:	83fb      	strh	r3, [r7, #30]
             pbuf = ((USBD_CUSTOM_HID_ItfTypeDef *)pdev->pUserData)->pReport;
  8005cae:	687b      	ldr	r3, [r7, #4]
@@ -17837,7 +17837,7 @@ static USBD_StatusTypeDef USBD_SetConfig(USBD_HandleTypeDef *pdev, USBD_SetupReq
  8006e7a:	46bd      	mov	sp, r7
  8006e7c:	bd80      	pop	{r7, pc}
  8006e7e:	bf00      	nop
- 8006e80:	20000207 	.word	0x20000207
+ 8006e80:	20000177 	.word	0x20000177
 
 08006e84 <USBD_GetConfig>:
   * @param  pdev: device instance
@@ -18630,10 +18630,10 @@ void MX_USB_DEVICE_Init(void)
 }
  8007268:	bf00      	nop
  800726a:	bd80      	pop	{r7, pc}
- 800726c:	2000018c 	.word	0x2000018c
- 8007270:	2000027c 	.word	0x2000027c
+ 800726c:	200000fc 	.word	0x200000fc
+ 8007270:	200001ec 	.word	0x200001ec
  8007274:	20000014 	.word	0x20000014
- 8007278:	2000017c 	.word	0x2000017c
+ 8007278:	200000ec 	.word	0x200000ec
 
 0800727c <CUSTOM_HID_Init_FS>:
 /**
@@ -18705,7 +18705,7 @@ static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
  80072b6:	3708      	adds	r7, #8
  80072b8:	46bd      	mov	sp, r7
  80072ba:	bd80      	pop	{r7, pc}
- 80072bc:	2000027c 	.word	0x2000027c
+ 80072bc:	200001ec 	.word	0x200001ec
 
 080072c0 <USBD_FS_DeviceDescriptor>:
   * @param  speed : Current device speed
@@ -18733,7 +18733,7 @@ uint8_t * USBD_FS_DeviceDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
  80072d8:	46bd      	mov	sp, r7
  80072da:	f85d 7b04 	ldr.w	r7, [sp], #4
  80072de:	4770      	bx	lr
- 80072e0:	200001a8 	.word	0x200001a8
+ 80072e0:	20000118 	.word	0x20000118
 
 080072e4 <USBD_FS_LangIDStrDescriptor>:
   * @param  speed : Current device speed
@@ -18761,7 +18761,7 @@ uint8_t * USBD_FS_LangIDStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
  80072fc:	46bd      	mov	sp, r7
  80072fe:	f85d 7b04 	ldr.w	r7, [sp], #4
  8007302:	4770      	bx	lr
- 8007304:	200001bc 	.word	0x200001bc
+ 8007304:	2000012c 	.word	0x2000012c
 
 08007308 <USBD_FS_ProductStrDescriptor>:
   * @param  speed : Current device speed
@@ -18804,7 +18804,7 @@ uint8_t * USBD_FS_ProductStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length
  8007336:	46bd      	mov	sp, r7
  8007338:	bd80      	pop	{r7, pc}
  800733a:	bf00      	nop
- 800733c:	2000054c 	.word	0x2000054c
+ 800733c:	200004bc 	.word	0x200004bc
  8007340:	08007b40 	.word	0x08007b40
 
 08007344 <USBD_FS_ManufacturerStrDescriptor>:
@@ -18833,7 +18833,7 @@ uint8_t * USBD_FS_ManufacturerStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *l
  800735e:	3708      	adds	r7, #8
  8007360:	46bd      	mov	sp, r7
  8007362:	bd80      	pop	{r7, pc}
- 8007364:	2000054c 	.word	0x2000054c
+ 8007364:	200004bc 	.word	0x200004bc
  8007368:	08007b4c 	.word	0x08007b4c
 
 0800736c <USBD_FS_SerialStrDescriptor>:
@@ -18869,7 +18869,7 @@ uint8_t * USBD_FS_SerialStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
  8007386:	3708      	adds	r7, #8
  8007388:	46bd      	mov	sp, r7
  800738a:	bd80      	pop	{r7, pc}
- 800738c:	200001c0 	.word	0x200001c0
+ 800738c:	20000130 	.word	0x20000130
 
 08007390 <USBD_FS_ConfigStrDescriptor>:
   * @param  speed : Current device speed
@@ -18912,7 +18912,7 @@ uint8_t * USBD_FS_ConfigStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
  80073be:	46bd      	mov	sp, r7
  80073c0:	bd80      	pop	{r7, pc}
  80073c2:	bf00      	nop
- 80073c4:	2000054c 	.word	0x2000054c
+ 80073c4:	200004bc 	.word	0x200004bc
  80073c8:	08007b5c 	.word	0x08007b5c
 
 080073cc <USBD_FS_InterfaceStrDescriptor>:
@@ -18956,8 +18956,8 @@ uint8_t * USBD_FS_InterfaceStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *leng
  80073fa:	46bd      	mov	sp, r7
  80073fc:	bd80      	pop	{r7, pc}
  80073fe:	bf00      	nop
- 8007400:	2000054c 	.word	0x2000054c
- 8007404:	08007b6c 	.word	0x08007b6c
+ 8007400:	200004bc 	.word	0x200004bc
+ 8007404:	08007b70 	.word	0x08007b70
 
 08007408 <Get_SerialNum>:
   * @brief  Create the serial number string descriptor
@@ -19015,8 +19015,8 @@ static void Get_SerialNum(void)
  800744c:	1fff7a10 	.word	0x1fff7a10
  8007450:	1fff7a14 	.word	0x1fff7a14
  8007454:	1fff7a18 	.word	0x1fff7a18
- 8007458:	200001c2 	.word	0x200001c2
- 800745c:	200001d2 	.word	0x200001d2
+ 8007458:	20000132 	.word	0x20000132
+ 800745c:	20000142 	.word	0x20000142
 
 08007460 <IntToUnicode>:
   * @param  pbuf: pointer to the buffer
@@ -19652,7 +19652,7 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
  80077e6:	3708      	adds	r7, #8
  80077e8:	46bd      	mov	sp, r7
  80077ea:	bd80      	pop	{r7, pc}
- 80077ec:	2000074c 	.word	0x2000074c
+ 80077ec:	200006bc 	.word	0x200006bc
 
 080077f0 <USBD_LL_Start>:
   * @brief  Starts the low level portion of the device driver.
@@ -20100,7 +20100,7 @@ void *USBD_static_malloc(uint32_t size)
  8007a58:	f85d 7b04 	ldr.w	r7, [sp], #4
  8007a5c:	4770      	bx	lr
  8007a5e:	bf00      	nop
- 8007a60:	20000208 	.word	0x20000208
+ 8007a60:	20000178 	.word	0x20000178
 
 08007a64 <USBD_static_free>:
   * @brief  Dummy memory free
@@ -20215,10 +20215,10 @@ USBD_StatusTypeDef USBD_Get_USB_Status(HAL_StatusTypeDef hal_status)
  8007b02:	4798      	blx	r3
  8007b04:	3601      	adds	r6, #1
  8007b06:	e7f2      	b.n	8007aee <__libc_init_array+0x1e>
- 8007b08:	08007ba0 	.word	0x08007ba0
- 8007b0c:	08007ba0 	.word	0x08007ba0
- 8007b10:	08007ba0 	.word	0x08007ba0
- 8007b14:	08007ba4 	.word	0x08007ba4
+ 8007b08:	08007ba8 	.word	0x08007ba8
+ 8007b0c:	08007ba8 	.word	0x08007ba8
+ 8007b10:	08007ba8 	.word	0x08007ba8
+ 8007b14:	08007bac 	.word	0x08007bac
 
 08007b18 <memset>:
  8007b18:	4402      	add	r2, r0

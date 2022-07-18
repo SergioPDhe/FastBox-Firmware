@@ -67,8 +67,8 @@
 #define USBD_MANUFACTURER_STRING     "Sergio_Dhelomme"
 #define USBD_PID_FS     22352
 #define USBD_PRODUCT_STRING_FS     "Fastbox_USB"
-#define USBD_CONFIGURATION_STRING_FS     "Fastbox Config"
-#define USBD_INTERFACE_STRING_FS     "Fastbox Interface"
+#define USBD_CONFIGURATION_STRING_FS     "Custom HID Config"
+#define USBD_INTERFACE_STRING_FS     "Custom HID Interface"
 
 #define USB_SIZ_BOS_DESC            0x0C
 
