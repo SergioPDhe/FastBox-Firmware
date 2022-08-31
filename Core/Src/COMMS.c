@@ -16,6 +16,8 @@ void ReceiveCommand() // main communication function - reads incoming console me
     ReceiveByte();       // get second command out of the way (useless byte)
     ReceiveRumbleByte(); // get last 2 bits of 3rd command to check for rumble
 
+    //HAL_Delay(1);
+
     SendInputs();	// reply with controller inputs
     break;
 

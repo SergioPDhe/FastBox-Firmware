@@ -152,11 +152,11 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
   REPORT_COUNT, 0x04,					// 4 reports of 1 bit
   USB_INPUT, CONST_VAR_ABS, // 6 BYTES			// input for these is constant
 
-  END_COLLECTION, 				// end physical application
+  //END_COLLECTION, 				// end physical application
 
   //67 BYTES
 
-
+  /*
 
   // RUMBLE DESCRIPTOR CODE
 
@@ -226,7 +226,7 @@ __ALIGN_BEGIN static uint8_t CUSTOM_HID_ReportDesc_FS[USBD_CUSTOM_HID_REPORT_DES
   //END_COLLECTION,		// 7 BYTES	// application collection END
 
 				// 78 BYTES FOR RUMBLE
-
+  */
   //END_COLLECTION,
 
   /* USER CODE END 0 */

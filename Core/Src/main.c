@@ -26,6 +26,8 @@
 //#include "GC_DAC.h"
 //#include "COMMS.h"
 #include "SETUP.h"
+#include "usbd_customhid.h"
+#include "usbd_ctlreq.h"
 
 /* USER CODE END Includes */
 
@@ -155,6 +157,7 @@ int main(void)
 	{
 	  if (modeUSB == 1)
 	  {
+	      //Digital_Analog_Conversion();
 	      UpdateInputsUSB();
 	  }
 
@@ -325,7 +328,9 @@ static void MX_GPIO_Init(void)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  //count_num++;
+
+
+
   Digital_Analog_Conversion();
   ReceiveCommand(); // reads incoming message from console and replies accordingly
 		    // See COMMS.h for more detail
@@ -337,7 +342,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin); // clear interrupt flag
 }
 
-void UpdateInputsUSB()
+void PrepareInputsUSB()
 {
   Digital_Analog_Conversion();
 
@@ -350,8 +355,15 @@ void UpdateInputsUSB()
   ControllerInputs.analog_l = AnalogL;
   ControllerInputs.analog_r = AnalogR;
   ControllerInputs.dpad = Dpad2HatSwitch(DPad);
+}
 
-  USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, &ControllerInputs, 9);
+void UpdateInputsUSB()
+{
+  //PrepareInputsUSB();
+
+  USBD_CUSTOM_HID_SendInputs(&hUsbDeviceFS, &ControllerInputs, 9, &PrepareInputsUSB);
+
+
 }
 
 /* USER CODE END 4 */
